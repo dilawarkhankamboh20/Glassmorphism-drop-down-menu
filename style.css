@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+
+body{
+
+    padding: 30px;
+    font-family: sans-serif;
+    background: #c31432;
+    background: linear-gradient(to right, #240b36 , #c31432);
+    height: 100vh;
+}
+
+.container{
+
+    position: relative;
+    max-width: 80vw;
+    margin: auto;
+}
+
+nav{
+    margin-top: 5rem;
+}
+
+.menu{
+
+    position: absolute;
+    border-radius: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 8px 32px 0  rgba(22, 22, 23, 0.35);
+    float: left;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 2px solid rgba(255, 255, 255, 0.25);
+    padding: 10px 30px;
+    width: 90%;
+}
+
+.menu ul{
+
+    list-style-type: none;
+}
+
+.menu >li{
+
+    float: left;
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 0 0  rgba(0, 0, 0, 0.1);
+    perspective: 1000px;
+}
+
+.menu > li:first-child{
+
+    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.1) , 1px 0 0 rgba(255, 255, 255, 0.25);
+}
+
+.menu a{
+
+    display: block;
+    position: relative;
+    z-index: 10;
+    padding: 13px 20px 13px 20px;
+    line-height: 1;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.25s ease-in-out;
+
+}
+
+
+.menu > li:hover >a{
+
+    background: white;
+    color: black;
+    text-shadow: none;
+    border-radius: 30px;
+}
+
+
+.menu li ul{
+
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 200px;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background: transparent;
+    overflow: hidden;
+    transform-origin: 50% 50%;
+}
+
+.menu li ul li:hover > a{
+
+
+    background: white;
+    color: black;
+    text-shadow: none;
+    border-radius: 30px;
+}
+
+.menu li:hover ul{
+
+    padding: 15px 0;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(22, 22, 23, 0.35);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    opacity: 1;
+    visibility: visible;
+    animation:  dropdown 1s ease;
+
+}
+
+
+
+@keyframes dropdown{
+
+    0%{
+        opacity: 0.9999;
+        transform: scaleX(90deg);
+    }
+
+    30%{
+
+        transform: rotateX(-20deg) rotateY(5deg);
+        animation-timing-function: ease-in-out;
+    }
+
+    65%{
+
+        transform: rotateX(20deg) rotateY(5deg);
+        animation-timing-function: ease-in-out;
+    }
+}
